@@ -38,9 +38,9 @@ WebSocketServer.on('connection', function connection(connection) {
 
     connection.socket.on('close', function close(code, reason) {
         if (connection.type === type.CLIENT) {
-            for (const functionId in connection.functions) {
-                connection.functions[functionId].socket.close();
-            }
+            connection.function.socket.close();
+        } else if (connection.type === type.FUNCTION) {
+            delete connection.client.function
         }
     });
 });
@@ -59,11 +59,10 @@ Server.on('upgrade', function upgrade(request, socket, head) {
         } else {
             connection.type = type.FUNCTION;
             connection.client = client;
-            client.functions[functionId] = connection;
+            client.function = connection;
         }    
     } else {
         connection.type = type.CLIENT;
-        connection.functions = {};
     }
 
     WebSocketServer.handleUpgrade(request, socket, head, function done(webSocket) {
