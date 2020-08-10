@@ -1,0 +1,16 @@
+{
+  "name": "product-purchaser-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "MohsinA1i",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.727.1",
+    "ws": "^7.3.1"
+  }
+}
