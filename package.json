@@ -1,6 +1,6 @@
 {
-  "name": "product-purchaser-gateway",
-  "version": "1.0.0",
+  "name": "product-purchaser-server",
+  "version": "0.1.6",
   "description": "",
   "main": "server.js",
   "scripts": {
